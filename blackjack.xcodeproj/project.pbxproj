@@ -11,6 +11,7 @@
 		7680103D1D96E3E5006F88CA /* card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103B1D96E3E5006F88CA /* card.cpp */; };
 		768010401D96E544006F88CA /* hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103E1D96E544006F88CA /* hand.cpp */; };
 		768010431D96EA5E006F88CA /* deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010411D96EA5E006F88CA /* deck.cpp */; };
+		768010461D96F12A006F88CA /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010441D96F12A006F88CA /* game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		7680103F1D96E544006F88CA /* hand.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hand.hpp; sourceTree = "<group>"; };
 		768010411D96EA5E006F88CA /* deck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = deck.cpp; sourceTree = "<group>"; };
 		768010421D96EA5E006F88CA /* deck.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = deck.hpp; sourceTree = "<group>"; };
+		768010441D96F12A006F88CA /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
+		768010451D96F12A006F88CA /* game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				7680103F1D96E544006F88CA /* hand.hpp */,
 				768010411D96EA5E006F88CA /* deck.cpp */,
 				768010421D96EA5E006F88CA /* deck.hpp */,
+				768010441D96F12A006F88CA /* game.cpp */,
+				768010451D96F12A006F88CA /* game.hpp */,
 				7680103C1D96E3E5006F88CA /* card.hpp */,
 			);
 			path = blackjack;
@@ -136,6 +141,7 @@
 				768010431D96EA5E006F88CA /* deck.cpp in Sources */,
 				76255B321D96E30D00879912 /* main.cpp in Sources */,
 				7680103D1D96E3E5006F88CA /* card.cpp in Sources */,
+				768010461D96F12A006F88CA /* game.cpp in Sources */,
 				768010401D96E544006F88CA /* hand.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

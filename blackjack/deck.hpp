@@ -11,26 +11,13 @@
 
 #include <stdio.h>
 #include <vector>
-#include <random>
 #include "card.hpp"
 
 class Deck {
 private:
 	std::vector<const Card*> cards;
 public:
-	Deck() {
-		// Is created shuffled
-		std::uniform_int_distribution<unsigned int> distribution(0, 51);
-		std::default_random_engine randomEngine;
-		cards.resize(52);
-		for (unsigned int i = 0; i < 52; i++) {
-			unsigned int where;
-			do {
-				where = distribution(randomEngine);
-			} while (cards[where] == nullptr);
-			cards[where] = &Card::allCards[i];
-		}
-	}
+	Deck();
 	const Card* hit();
 };
 
