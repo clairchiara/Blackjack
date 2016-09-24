@@ -16,8 +16,8 @@
 
 class Game {
 private:
-	std::unique_ptr<Hand> hand;
 	std::unique_ptr<Deck> deck;
+	std::unique_ptr<Hand> hand;
 public:
 	Game();
 	void hit();

@@ -18,7 +18,7 @@ Deck::Deck() {
 		unsigned int where;
 		do {
 			where = distribution(randomEngine);
-		} while (cards[where] == nullptr);
+		} while (cards[where] != nullptr);
 		cards[where] = &Card::allCards[i];
 	}
 }
