@@ -11,13 +11,14 @@
 
 #include <stdio.h>
 #include <vector>
+#include <array>
 #include "card.hpp"
 
 class Hand {
 private:
 	std::vector<const Card*> cards;
 public:
-	Hand(const Card*, const Card*, const Card*);
+	Hand(const std::array<const Card*, 3>&);
 	unsigned int value() const;
 	bool bust() const;
 	void addCard(const Card*);
