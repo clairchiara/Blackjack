@@ -8,7 +8,7 @@
 
 #include "hand.hpp"
 
-Hand::Hand(const Card* const initialCards[3]) {
+Hand::Hand(const Card* initialCards[3]) {
 	addCard(initialCards[0]);
 	addCard(initialCards[1]);
 	addCard(initialCards[2]);
@@ -35,7 +35,7 @@ bool Hand::bust() const {
 	return false;
 };
 
-void Hand::addCard(const Card* const card) {
+void Hand::addCard(const Card* card) {
 	cards.push_back(card);
 };
 
