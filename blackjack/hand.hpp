@@ -17,9 +17,10 @@ class Hand {
 private:
 	std::vector<const Card*> cards;
 public:
+	Hand(const Card* const [3]);
 	unsigned int value() const;
 	bool bust() const;
-	void addCard(const Card* const card);
+	void addCard(const Card* const);
 	void empty();
 	std::vector<const Card*> getCards() const;
 };

@@ -8,6 +8,12 @@
 
 #include "hand.hpp"
 
+Hand::Hand(const Card* const initialCards[3]) {
+	addCard(initialCards[0]);
+	addCard(initialCards[1]);
+	addCard(initialCards[2]);
+};
+
 unsigned int Hand::value() const {
 	unsigned int aces{0};
 	unsigned int sum{0};
