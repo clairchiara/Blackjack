@@ -21,3 +21,11 @@ void Game::deal() {
 void Game::showHand() const {
 	std::cout << *hand;
 };
+
+void Game::hit() {
+	deal();
+};
+
+const Hand& Game::getHand() const {
+	return *hand;
+};

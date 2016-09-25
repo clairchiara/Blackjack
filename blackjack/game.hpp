@@ -22,6 +22,10 @@ public:
 	Game();
 	void deal();
 	void showHand() const;
+	const Hand& getHand() const;
+	void hit();
+	void double_hit();
+	void split();
 };
 
 #endif /* game_hpp */

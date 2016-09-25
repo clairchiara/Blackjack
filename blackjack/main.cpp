@@ -13,5 +13,15 @@ int main(int argc, const char * argv[]) {
 	Game game;
 	game.showHand();
 	std::cout << std::endl;
-    return 0;
+	while (not game.getHand().bust()) {
+		std::cout << "Hit? ";
+		std::string response;
+		std::cin >> response;
+		if (response.at(0) == 'y') {
+			game.hit();
+			game.showHand();
+			std::cout << std::endl;
+		} else return 0;
+	}
+	return 0;
 }
