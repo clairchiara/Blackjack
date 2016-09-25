@@ -8,15 +8,22 @@
 
 #include "deck.hpp"
 
-Deck::Deck() : distribution(0, 51) {
+const u_int Deck::DECK_SIZE = 52;
+
+Deck::Deck() : Deck(1) {}
+
+Deck::Deck(u_int decks) : distribution(0, DECK_SIZE * decks - 1) {
+	if (decks > 6) decks = 6;
 	// Is created shuffled
-	cards.resize(52);
-	for (u_int i = 0; i < 52; i++) {
-		u_int where;
-		do {
-			where = distribution(randomDevice);
-		} while (cards[where] != nullptr);
-		cards[where] = &Card::allCards[i];
+	cards.resize(DECK_SIZE * decks);
+	for (u_int i = 0; i < decks; i++) {
+		for (u_int j = 0; j < Card::allCards.size(); j++) {
+			u_int where;
+			do {
+				where = distribution(randomDevice);
+			} while (cards[where] != nullptr);
+			cards[where] = &Card::allCards[j];
+		}
 	}
 }
 

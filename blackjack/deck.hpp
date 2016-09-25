@@ -16,11 +16,13 @@
 
 class Deck {
 private:
+	static const u_int DECK_SIZE;
 	std::vector<const Card*> cards;
 	std::uniform_int_distribution<u_int> distribution;
 	std::random_device randomDevice;
 public:
 	Deck();
+	Deck(u_int);
 	const Card* hit();
 };
 
