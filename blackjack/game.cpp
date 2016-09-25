@@ -10,12 +10,12 @@
 
 Game::Game() : deck(new Deck()), hand(new Hand([this] {
 	std::array<const Card*, 2> initialCards;
-	for (int i = 0; i < 2; i++) initialCards[i] = deck->hit();
+	for (int i = 0; i < 2; i++) initialCards[i] = deck->deal();
 	return initialCards;
 }())) {};
 
 void Game::deal() {
-	hand->addCard(deck->hit());
+	hand->addCard(deck->deal());
 };
 
 void Game::showHand() const {
