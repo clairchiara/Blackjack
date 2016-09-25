@@ -14,9 +14,9 @@ Hand::Hand(const std::array<const Card*, 3>& initialCards) {
 	addCard(initialCards[2]);
 };
 
-unsigned int Hand::value() const {
-	unsigned int aces{0};
-	unsigned int sum{0};
+u_int Hand::value() const {
+	u_int aces{0};
+	u_int sum{0};
 	for (const Card* const card : cards) {
 		if (card->number == ACE) aces++;
 		sum += card->number;

@@ -6,16 +6,13 @@
 //  Copyright © 2016 Clair Marchesani. All rights reserved.
 //
 
-#include <random>
 #include "deck.hpp"
 
-Deck::Deck() {
+Deck::Deck() : distribution(0, 51) {
 	// Is created shuffled
-	std::uniform_int_distribution<unsigned int> distribution(0, 51);
-	std::default_random_engine randomEngine;
 	cards.resize(52);
-	for (unsigned int i = 0; i < 52; i++) {
-		unsigned int where;
+	for (u_int i = 0; i < 52; i++) {
+		u_int where;
 		do {
 			where = distribution(randomEngine);
 		} while (cards[where] != nullptr);

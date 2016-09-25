@@ -19,7 +19,7 @@ private:
 	std::vector<const Card*> cards;
 public:
 	Hand(const std::array<const Card*, 3>&);
-	unsigned int value() const;
+	u_int value() const;
 	bool bust() const;
 	void addCard(const Card*);
 	void empty();

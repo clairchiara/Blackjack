@@ -12,6 +12,8 @@
 #include <vector>
 #include <stdio.h>
 
+typedef unsigned int u_int;
+
 enum Suit {
 	CLUBS,
 	DIAMONDS,

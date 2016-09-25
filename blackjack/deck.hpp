@@ -11,11 +11,14 @@
 
 #include <stdio.h>
 #include <vector>
+#include <random>
 #include "card.hpp"
 
 class Deck {
 private:
 	std::vector<const Card*> cards;
+	std::uniform_int_distribution<u_int> distribution;
+	std::default_random_engine randomEngine;
 public:
 	Deck();
 	const Card* hit();
