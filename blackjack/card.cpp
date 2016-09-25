@@ -87,5 +87,5 @@ const std::vector<Card> Card::allCards{
 };
 
 Card::operator std::string() const {
-	return suitToString.at(suit) + numberToString.at(number);
+	return numberToString.at(number) + suitToString.at(suit);
 };
