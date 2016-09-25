@@ -20,7 +20,7 @@ class Hand {
 private:
 	std::vector<const Card*> cards;
 public:
-	Hand(const std::array<const Card*, 3>&);
+	Hand(const std::array<const Card*, 2>&);
 	u_int value() const;
 	bool bust() const;
 	void addCard(const Card*);

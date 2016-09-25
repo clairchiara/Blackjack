@@ -8,10 +8,9 @@
 
 #include "hand.hpp"
 
-Hand::Hand(const std::array<const Card*, 3>& initialCards) {
+Hand::Hand(const std::array<const Card*, 2>& initialCards) {
 	addCard(initialCards[0]);
 	addCard(initialCards[1]);
-	addCard(initialCards[2]);
 };
 
 u_int Hand::value() const {

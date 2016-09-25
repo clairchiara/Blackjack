@@ -9,8 +9,8 @@
 #include "game.hpp"
 
 Game::Game() : deck(new Deck()), hand(new Hand([this] {
-	std::array<const Card*, 3> initialCards;
-	for (int i = 0; i < 3; i++) initialCards[i] = deck->hit();
+	std::array<const Card*, 2> initialCards;
+	for (int i = 0; i < 2; i++) initialCards[i] = deck->hit();
 	return initialCards;
 }())) {};
 
