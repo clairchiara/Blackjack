@@ -10,7 +10,9 @@
 #define hand_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <vector>
+#include <string>
 #include <array>
 #include "card.hpp"
 
@@ -24,6 +26,9 @@ public:
 	void addCard(const Card*);
 	void empty();
 	std::vector<const Card*> getCards() const;
+	operator std::string() const;
 };
+
+std::ostream& operator<<(std::ostream&, Hand const&);
 
 #endif /* hand_hpp */

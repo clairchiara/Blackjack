@@ -17,3 +17,7 @@ Game::Game() : deck(new Deck()), hand(new Hand([this] {
 void Game::hit() {
 	hand->addCard(deck->hit());
 };
+
+void Game::showHand() const {
+	std::cout << *hand;
+};

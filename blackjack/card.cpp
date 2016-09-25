@@ -8,6 +8,29 @@
 
 #include "card.hpp"
 
+const std::map<Suit, std::string> Card::suitToString{
+	{CLUBS, "♣"},
+	{DIAMONDS, "♦"},
+	{HEARTS, "♥"},
+	{SPADES, "♠"}
+};
+
+const std::map<Number, std::string> Card::numberToString{
+	{ACE, "A"},
+	{TWO, "2"},
+	{THREE, "3"},
+	{FOUR, "4"},
+	{FIVE, "5"},
+	{SIX, "6"},
+	{SEVEN, "7"},
+	{EIGHT, "8"},
+	{NINE, "9"},
+	{TEN, "10"},
+	{JACK, "J"},
+	{QUEEN, "Q"},
+	{KING, "K"},
+};
+
 const std::vector<Card> Card::allCards{
 	Card{CLUBS, ACE},
 	Card{CLUBS, TWO},
@@ -61,4 +84,8 @@ const std::vector<Card> Card::allCards{
 	Card{SPADES, JACK},
 	Card{SPADES, QUEEN},
 	Card{SPADES, KING},
+};
+
+Card::operator std::string() const {
+	return suitToString.at(suit) + numberToString.at(number);
 };

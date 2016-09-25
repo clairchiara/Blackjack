@@ -21,6 +21,7 @@ private:
 public:
 	Game();
 	void hit();
+	void showHand() const;
 };
 
 #endif /* game_hpp */

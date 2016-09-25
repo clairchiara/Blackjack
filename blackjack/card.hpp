@@ -10,7 +10,9 @@
 #define card_hpp
 
 #include <vector>
+#include <string>
 #include <stdio.h>
+#include <map>
 
 typedef unsigned int u_int;
 
@@ -38,9 +40,12 @@ enum Number {
 };
 
 struct Card {
+	static const std::map<Suit, std::string> suitToString;
+	static const std::map<Number, std::string> numberToString;
 	const Suit suit;
 	const Number number;
 	static const std::vector<Card> allCards;
+	operator std::string() const;
 };
 
 #endif /* card_hpp */

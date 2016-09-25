@@ -46,3 +46,16 @@ void Hand::empty() {
 std::vector<const Card*> Hand::getCards() const {
 	return cards;
 };
+
+Hand::operator std::string() const {
+	std::string retVal;
+	for (const Card* card : cards) retVal += (std::string) *card + ", ";
+	retVal.erase(retVal.size()-2, retVal.size()-1);
+	retVal += ": " + std::to_string(value());
+	return retVal;
+};
+
+std::ostream& operator<<(std::ostream& stream, Hand const& hand) {
+	stream << (std::string) hand;
+	return stream;
+};
