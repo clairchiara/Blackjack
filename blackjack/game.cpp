@@ -14,7 +14,7 @@ Game::Game() : deck(new Deck()), hand(new Hand([this] {
 	return initialCards;
 }())) {};
 
-void Game::hit() {
+void Game::deal() {
 	hand->addCard(deck->hit());
 };
 

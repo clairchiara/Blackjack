@@ -24,7 +24,7 @@ private:
 public:
 	Deck();
 	Deck(u_int);
-	const Card* hit();
+	const Card* deal();
 	float load() const;
 };
 

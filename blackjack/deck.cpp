@@ -26,7 +26,7 @@ Deck::Deck(u_int _decks) : distribution(0, DECK_SIZE * decks - 1), decks(_decks 
 	}
 };
 
-const Card* Deck::hit() {
+const Card* Deck::deal() {
 	const Card* card = cards[cards.size() - 1];
 	cards.pop_back();
 	return card;

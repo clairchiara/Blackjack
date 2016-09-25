@@ -20,7 +20,7 @@ private:
 	std::unique_ptr<Hand> hand;
 public:
 	Game();
-	void hit();
+	void deal();
 	void showHand() const;
 };
 
