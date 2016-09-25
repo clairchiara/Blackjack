@@ -14,7 +14,7 @@ Deck::Deck() : distribution(0, 51) {
 	for (u_int i = 0; i < 52; i++) {
 		u_int where;
 		do {
-			where = distribution(randomEngine);
+			where = distribution(randomDevice);
 		} while (cards[where] != nullptr);
 		cards[where] = &Card::allCards[i];
 	}

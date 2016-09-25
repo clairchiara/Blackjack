@@ -18,7 +18,7 @@ class Deck {
 private:
 	std::vector<const Card*> cards;
 	std::uniform_int_distribution<u_int> distribution;
-	std::default_random_engine randomEngine;
+	std::random_device randomDevice;
 public:
 	Deck();
 	const Card* hit();
