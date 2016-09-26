@@ -8,7 +8,9 @@
 
 #include "hand.hpp"
 
-Hand::Hand(const std::array<const Card*, 2>& initialCards) {
+using std::to_string;
+
+Hand::Hand(const array<const Card*, 2>& initialCards) {
 	addCard(initialCards[0]);
 	addCard(initialCards[1]);
 };
@@ -42,19 +44,19 @@ void Hand::empty() {
 	cards.clear();
 };
 
-std::vector<const Card*> Hand::getCards() const {
+vector<const Card*> Hand::getCards() const {
 	return cards;
 };
 
-Hand::operator std::string() const {
-	std::string retVal;
-	for (const Card* card : cards) retVal += (std::string) *card + ", ";
+Hand::operator string() const {
+	string retVal;
+	for (const Card* card : cards) retVal += (string) *card + ", ";
 	retVal.erase(retVal.size()-2, retVal.size()-1);
-	retVal += ": " + std::to_string(value());
+	retVal += ": " + to_string(value());
 	return retVal;
 };
 
-std::ostream& operator<<(std::ostream& stream, Hand const& hand) {
-	stream << (std::string) hand;
+ostream& operator<<(ostream& stream, Hand const& hand) {
+	stream << (string) hand;
 	return stream;
 };

@@ -9,19 +9,33 @@
 #include <iostream>
 #include "game.hpp"
 
+using std::endl;
+using std::cin;
+
 int main(int argc, const char * argv[]) {
 	Game game;
 	game.showHand();
-	std::cout << std::endl;
+	cout << endl;
 	while (not game.getHand().bust()) {
-		std::cout << "Hit? ";
-		std::unique_ptr<char> response(new char);
-		std::cin.read(response.get(), 1);
-		if (*response == 'y') {
-			game.hit();
-			game.showHand();
-			std::cout << std::endl;
-		} else return 0;
+		cout << "Action? ";
+		unique_ptr<char> response(new char);
+		cin.read(response.get(), 1);
+		switch (*response) {
+			case 'y':
+				game.hit();
+				game.showHand();
+				cout << endl;
+			break;
+			case 'd':
+				game.double_hit();
+				game.showHand();
+				cout << endl;
+				return 0;
+			case 's':
+				return 0;
+			default:
+				return 0;
+		}
 	}
 	return 0;
 }

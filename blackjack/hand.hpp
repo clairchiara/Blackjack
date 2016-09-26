@@ -16,19 +16,22 @@
 #include <array>
 #include "card.hpp"
 
+using std::array;
+using std::ostream;
+
 class Hand {
 private:
-	std::vector<const Card*> cards;
+	vector<const Card*> cards;
 public:
-	Hand(const std::array<const Card*, 2>&);
+	Hand(const array<const Card*, 2>&);
 	u_int value() const;
 	bool bust() const;
 	void addCard(const Card*);
 	void empty();
-	std::vector<const Card*> getCards() const;
-	operator std::string() const;
+	vector<const Card*> getCards() const;
+	operator string() const;
 };
 
-std::ostream& operator<<(std::ostream&, Hand const&);
+ostream& operator<<(ostream&, Hand const&);
 
 #endif /* hand_hpp */

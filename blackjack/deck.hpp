@@ -14,13 +14,16 @@
 #include <random>
 #include "card.hpp"
 
+using std::uniform_int_distribution;
+using std::random_device;
+
 class Deck {
 private:
 	static const u_int DECK_SIZE;
 	const u_int decks;
-	std::vector<const Card*> cards;
-	std::uniform_int_distribution<u_int> distribution;
-	std::random_device randomDevice;
+	vector<const Card*> cards;
+	uniform_int_distribution<u_int> distribution;
+	random_device randomDevice;
 public:
 	Deck();
 	Deck(u_int);

@@ -9,7 +9,7 @@
 #include "game.hpp"
 
 Game::Game() : deck(new Deck()), hand(new Hand([this] {
-	std::array<const Card*, 2> initialCards;
+	array<const Card*, 2> initialCards;
 	for (int i = 0; i < 2; i++) initialCards[i] = deck->deal();
 	return initialCards;
 }())) {};
@@ -19,7 +19,7 @@ void Game::deal() {
 };
 
 void Game::showHand() const {
-	std::cout << *hand;
+	cout << *hand;
 };
 
 void Game::hit() {

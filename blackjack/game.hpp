@@ -14,10 +14,13 @@
 #include "hand.hpp"
 #include "deck.hpp"
 
+using std::cout;
+using std::unique_ptr;
+
 class Game {
 private:
-	std::unique_ptr<Deck> deck;
-	std::unique_ptr<Hand> hand;
+	unique_ptr<Deck> deck;
+	unique_ptr<Hand> hand;
 public:
 	Game();
 	void deal();

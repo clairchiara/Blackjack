@@ -16,6 +16,10 @@
 
 typedef unsigned int u_int;
 
+using std::map;
+using std::vector;
+using std::string;
+
 enum Suit {
 	CLUBS,
 	DIAMONDS,
@@ -40,12 +44,12 @@ enum Number {
 };
 
 struct Card {
-	static const std::map<Suit, std::string> suitToString;
-	static const std::map<Number, std::string> numberToString;
+	static const map<Suit, string> suitToString;
+	static const map<Number, string> numberToString;
 	const Suit suit;
 	const Number number;
-	static const std::vector<Card> allCards;
-	operator std::string() const;
+	static const vector<Card> allCards;
+	operator string() const;
 };
 
 #endif /* card_hpp */
