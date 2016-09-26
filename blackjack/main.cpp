@@ -15,9 +15,9 @@ int main(int argc, const char * argv[]) {
 	std::cout << std::endl;
 	while (not game.getHand().bust()) {
 		std::cout << "Hit? ";
-		std::string response;
-		std::cin >> response;
-		if (response.at(0) == 'y') {
+		std::unique_ptr<char> response(new char);
+		std::cin.read(response.get(), 1);
+		if (*response == 'y') {
 			game.hit();
 			game.showHand();
 			std::cout << std::endl;
