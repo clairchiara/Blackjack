@@ -18,17 +18,23 @@
 using std::endl;
 using std::cin;
 
+enum Person {
+	PLAYER,
+	DEALER
+};
+
 class Game {
 private:
 	unique_ptr<Deck> deck;
+	unique_ptr<Hand> dealerHand;
 	unique_ptr<Player> player;
 public:
 	Game(const long);
 	void play();
-	void deal();
-	void showHand() const;
-	const Hand& getHand() const;
-	void hit();
+	void deal(const Person);
+	void showHand(const Person) const;
+	const Hand& getHand(const Person) const;
+	void hit(const Person);
 	void double_hit();
 	void split();
 };
