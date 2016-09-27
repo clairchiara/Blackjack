@@ -8,18 +8,21 @@
 
 #include "game.hpp"
 
-Game::Game() : deck(new Deck()), hand(new Hand([this] {
-	array<const Card*, 2> initialCards;
-	for (int i = 0; i < 2; i++) initialCards[i] = deck->deal();
-	return initialCards;
-}())) {};
+Game::Game(const long startingCash) : deck(new Deck()) {
+	Hand hand{[this] {
+		array<const Card*, 2> initialCards;
+		for (int i = 0; i < 2; i++) initialCards[i] = deck->deal();
+		return initialCards;
+	}()};
+	player = unique_ptr<Player>(new Player(hand, startingCash));
+};
 
 void Game::deal() {
-	hand->addCard(deck->deal());
+	player->addCard(deck->deal());
 };
 
 void Game::showHand() const {
-	cout << *hand;
+	player->showHand();
 };
 
 void Game::hit() {
@@ -31,7 +34,7 @@ void Game::double_hit() {
 };
 
 const Hand& Game::getHand() const {
-	return *hand;
+	return player->getHand();
 };
 
 void Game::play() {
@@ -42,7 +45,7 @@ void Game::play() {
 		unique_ptr<char> response(new char);
 		cin.read(response.get(), 1);
 		switch (*response) {
-			case 'y':
+			case 'h':
 				hit();
 				showHand();
 				cout << endl;

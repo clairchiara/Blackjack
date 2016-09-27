@@ -13,18 +13,17 @@
 #include <memory>
 #include "hand.hpp"
 #include "deck.hpp"
+#include "player.hpp"
 
-using std::cout;
-using std::unique_ptr;
 using std::endl;
 using std::cin;
 
 class Game {
 private:
 	unique_ptr<Deck> deck;
-	unique_ptr<Hand> hand;
+	unique_ptr<Player> player;
 public:
-	Game();
+	Game(const long);
 	void play();
 	void deal();
 	void showHand() const;
