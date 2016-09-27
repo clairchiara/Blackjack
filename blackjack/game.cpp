@@ -26,6 +26,37 @@ void Game::hit() {
 	deal();
 };
 
+void Game::double_hit() {
+	deal();
+};
+
 const Hand& Game::getHand() const {
 	return *hand;
+};
+
+void Game::play() {
+	showHand();
+	cout << endl;
+	while (not getHand().bust()) {
+		cout << "Action? ";
+		unique_ptr<char> response(new char);
+		cin.read(response.get(), 1);
+		switch (*response) {
+			case 'y':
+				hit();
+				showHand();
+				cout << endl;
+				break;
+			case 'd':
+				double_hit();
+				showHand();
+				cout << endl;
+				return;
+			case 's':
+				return;
+			default:
+				return;
+		}
+	}
+	return;
 };

@@ -16,6 +16,8 @@
 
 using std::cout;
 using std::unique_ptr;
+using std::endl;
+using std::cin;
 
 class Game {
 private:
@@ -23,6 +25,7 @@ private:
 	unique_ptr<Hand> hand;
 public:
 	Game();
+	void play();
 	void deal();
 	void showHand() const;
 	const Hand& getHand() const;
