@@ -46,7 +46,7 @@ const Hand& Game::getHand(const Person person) const {
 	else throw new std::exception();
 };
 
-void Game::play() {
+void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 	cout << "Your hand ";
 	showHand(PLAYER);
 	cout << endl << "Dealer's hand ";
