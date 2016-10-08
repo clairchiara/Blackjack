@@ -32,6 +32,6 @@ public:
 	operator string() const;
 };
 
-ostream& operator<<(ostream&, Hand const&);
+ostream& operator<<(ostream&, const Hand&);
 
 #endif /* hand_hpp */

@@ -56,7 +56,7 @@ Hand::operator string() const {
 	return retVal;
 };
 
-ostream& operator<<(ostream& stream, Hand const& hand) {
+ostream& operator<<(ostream& stream, const Hand& hand) {
 	stream << (string) hand;
 	return stream;
 };
