@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		76086AF71D9A5A34005BA6F7 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76086AF51D9A5A34005BA6F7 /* player.cpp */; };
 		76255B321D96E30D00879912 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76255B311D96E30D00879912 /* main.cpp */; };
+		7629402F1DA8D3B3003A0BBB /* blackjackTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */; };
+		762940351DA8DC9C003A0BBB /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76086AF51D9A5A34005BA6F7 /* player.cpp */; };
+		762940361DA8DC9F003A0BBB /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010441D96F12A006F88CA /* game.cpp */; };
+		762940371DA8DCA1003A0BBB /* deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010411D96EA5E006F88CA /* deck.cpp */; };
+		762940381DA8DCA4003A0BBB /* hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103E1D96E544006F88CA /* hand.cpp */; };
+		762940391DA8DCA6003A0BBB /* card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103B1D96E3E5006F88CA /* card.cpp */; };
 		7680103D1D96E3E5006F88CA /* card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103B1D96E3E5006F88CA /* card.cpp */; };
 		768010401D96E544006F88CA /* hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103E1D96E544006F88CA /* hand.cpp */; };
 		768010431D96EA5E006F88CA /* deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010411D96EA5E006F88CA /* deck.cpp */; };
@@ -32,6 +38,9 @@
 		76086AF61D9A5A34005BA6F7 /* player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = player.hpp; sourceTree = "<group>"; };
 		76255B2E1D96E30D00879912 /* blackjack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blackjack; sourceTree = BUILT_PRODUCTS_DIR; };
 		76255B311D96E30D00879912 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7629402C1DA8D3B3003A0BBB /* blackjackTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = blackjackTest.mm; sourceTree = "<group>"; };
+		762940301DA8D3B3003A0BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7680103B1D96E3E5006F88CA /* card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = card.cpp; sourceTree = "<group>"; };
 		7680103C1D96E3E5006F88CA /* card.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = card.hpp; sourceTree = "<group>"; };
 		7680103E1D96E544006F88CA /* hand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hand.cpp; sourceTree = "<group>"; };
@@ -50,6 +59,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		762940291DA8D3B3003A0BBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				76255B301D96E30D00879912 /* blackjack */,
+				7629402D1DA8D3B3003A0BBB /* blackjackTest */,
 				76255B2F1D96E30D00879912 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				76255B2E1D96E30D00879912 /* blackjack */,
+				7629402C1DA8D3B3003A0BBB /* blackjackTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +105,15 @@
 			path = blackjack;
 			sourceTree = "<group>";
 		};
+		7629402D1DA8D3B3003A0BBB /* blackjackTest */ = {
+			isa = PBXGroup;
+			children = (
+				7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */,
+				762940301DA8D3B3003A0BBB /* Info.plist */,
+			);
+			path = blackjackTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,17 +134,39 @@
 			productReference = 76255B2E1D96E30D00879912 /* blackjack */;
 			productType = "com.apple.product-type.tool";
 		};
+		7629402B1DA8D3B3003A0BBB /* blackjackTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762940331DA8D3B3003A0BBB /* Build configuration list for PBXNativeTarget "blackjackTest" */;
+			buildPhases = (
+				762940281DA8D3B3003A0BBB /* Sources */,
+				762940291DA8D3B3003A0BBB /* Frameworks */,
+				7629402A1DA8D3B3003A0BBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blackjackTest;
+			productName = blackjackTest;
+			productReference = 7629402C1DA8D3B3003A0BBB /* blackjackTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		76255B261D96E30D00879912 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Clair Marchesani";
 				TargetAttributes = {
 					76255B2D1D96E30D00879912 = {
 						CreatedOnToolsVersion = 7.3;
+					};
+					7629402B1DA8D3B3003A0BBB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 4X4NG3B3XG;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -134,9 +183,20 @@
 			projectRoot = "";
 			targets = (
 				76255B2D1D96E30D00879912 /* blackjack */,
+				7629402B1DA8D3B3003A0BBB /* blackjackTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7629402A1DA8D3B3003A0BBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		76255B2A1D96E30D00879912 /* Sources */ = {
@@ -149,6 +209,19 @@
 				7680103D1D96E3E5006F88CA /* card.cpp in Sources */,
 				768010461D96F12A006F88CA /* game.cpp in Sources */,
 				768010401D96E544006F88CA /* hand.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		762940281DA8D3B3003A0BBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762940371DA8DCA1003A0BBB /* deck.cpp in Sources */,
+				762940351DA8DC9C003A0BBB /* player.cpp in Sources */,
+				7629402F1DA8D3B3003A0BBB /* blackjackTest.mm in Sources */,
+				762940381DA8DCA4003A0BBB /* hand.cpp in Sources */,
+				762940361DA8DC9F003A0BBB /* game.cpp in Sources */,
+				762940391DA8DCA6003A0BBB /* card.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,8 +242,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -213,8 +288,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -254,6 +331,36 @@
 			};
 			name = Release;
 		};
+		762940311DA8D3B3003A0BBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4X4NG3B3XG;
+				INFOPLIST_FILE = blackjackTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Clair-Marchesani.blackjackTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		762940321DA8D3B3003A0BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4X4NG3B3XG;
+				INFOPLIST_FILE = blackjackTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Clair-Marchesani.blackjackTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -274,6 +381,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		762940331DA8D3B3003A0BBB /* Build configuration list for PBXNativeTarget "blackjackTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762940311DA8D3B3003A0BBB /* Debug */,
+				762940321DA8D3B3003A0BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
