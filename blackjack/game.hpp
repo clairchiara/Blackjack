@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <memory>
+#include <set>
 #include "hand.hpp"
 #include "deck.hpp"
 #include "player.hpp"
@@ -28,8 +29,10 @@ private:
 	unique_ptr<Deck> deck;
 	unique_ptr<Hand> dealerHand;
 	unique_ptr<Player> player;
+	inline set<Action> allowedActions() const;
 public:
 	Game(const long);
+	set<Action> action(Action);
 	void play();
 	void deal(const Person);
 	void showHand(const Person) const;

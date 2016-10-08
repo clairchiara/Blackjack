@@ -22,6 +22,10 @@ Game::Game(const long startingCash) : deck(new Deck()), dealerHand(new Hand([thi
 	player = unique_ptr<Player>(new Player(hand, startingCash));
 };
 
+inline set<Action> Game::allowedActions() const {
+	return player->getHand().getAllowedActions();
+};
+
 void Game::deal(const Person person) {
 	if (person == PLAYER) player->addCard(deck->deal());
 	else if (person == DEALER) dealerHand->addCard(deck->deal());
@@ -44,6 +48,24 @@ const Hand& Game::getHand(const Person person) const {
 	if (person == PLAYER) return player->getHand();
 	else if (person == DEALER) return *dealerHand;
 	else throw new std::exception();
+};
+
+set<Action> Game::action(Action action) {
+	if (allowedActions().find(action) == allowedActions().end()) return allowedActions();
+	switch (action) {
+		case HIT:
+			hit(PLAYER);
+			break;
+		case DOUBLE:
+			double_hit();
+			break;
+		case SPLIT:
+			split();
+			break;
+		case STAND:
+			break;
+	}
+	return allowedActions();
 };
 
 void Game::play() { // TODO: split into more MVC-like structure to have APIs.

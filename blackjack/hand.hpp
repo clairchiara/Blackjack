@@ -13,22 +13,34 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <set>
 #include <array>
 #include "card.hpp"
 
 using std::array;
 using std::ostream;
+using std::set;
+
+enum Action {
+	HIT,
+	DOUBLE,
+	SPLIT,
+	STAND
+};
 
 class Hand {
 private:
 	vector<const Card*> cards;
+	bool doubled;
 public:
 	Hand(const array<const Card*, 2>&);
 	u_int value() const;
 	bool bust() const;
 	void addCard(const Card*);
+	void addDCardAndDouble(const Card*);
 	void empty();
 	vector<const Card*> getCards() const;
+	set<Action> getAllowedActions() const;
 	operator string() const;
 };
 

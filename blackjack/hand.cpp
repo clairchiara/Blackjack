@@ -10,7 +10,7 @@
 
 using std::to_string;
 
-Hand::Hand(const array<const Card*, 2>& initialCards) {
+Hand::Hand(const array<const Card*, 2>& initialCards) : doubled(false) {
 	addCard(initialCards[0]);
 	addCard(initialCards[1]);
 };
@@ -40,12 +40,30 @@ void Hand::addCard(const Card* card) {
 	cards.push_back(card);
 };
 
+void Hand::addDCardAndDouble(const Card* card) {
+	cards.push_back(card);
+	doubled = true;
+};
+
 void Hand::empty() {
 	cards.clear();
 };
 
 vector<const Card*> Hand::getCards() const {
 	return cards;
+};
+
+set<Action> Hand::getAllowedActions() const {
+	set<Action> allowedActions;
+	allowedActions.insert(STAND);
+	if (not bust()) {
+		allowedActions.insert(HIT);
+		if (cards.size() == 2) {
+			if (cards[0] == cards[1]) allowedActions.insert(SPLIT);
+			if (not doubled) allowedActions.insert(DOUBLE);
+		}
+	}
+	return allowedActions;
 };
 
 Hand::operator string() const {
