@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		76086AF71D9A5A34005BA6F7 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76086AF51D9A5A34005BA6F7 /* player.cpp */; };
 		76255B321D96E30D00879912 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76255B311D96E30D00879912 /* main.cpp */; };
-		7629402F1DA8D3B3003A0BBB /* blackjackTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */; };
 		762940351DA8DC9C003A0BBB /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76086AF51D9A5A34005BA6F7 /* player.cpp */; };
 		762940361DA8DC9F003A0BBB /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010441D96F12A006F88CA /* game.cpp */; };
 		762940371DA8DCA1003A0BBB /* deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010411D96EA5E006F88CA /* deck.cpp */; };
@@ -19,6 +18,7 @@
 		768010401D96E544006F88CA /* hand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7680103E1D96E544006F88CA /* hand.cpp */; };
 		768010431D96EA5E006F88CA /* deck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010411D96EA5E006F88CA /* deck.cpp */; };
 		768010461D96F12A006F88CA /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 768010441D96F12A006F88CA /* game.cpp */; };
+		7684CEA71DA8F3E30071EA4E /* handTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7684CEA61DA8F3E30071EA4E /* handTest.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,6 @@
 		76255B2E1D96E30D00879912 /* blackjack */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = blackjack; sourceTree = BUILT_PRODUCTS_DIR; };
 		76255B311D96E30D00879912 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7629402C1DA8D3B3003A0BBB /* blackjackTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blackjackTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = blackjackTest.mm; sourceTree = "<group>"; };
 		762940301DA8D3B3003A0BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7680103B1D96E3E5006F88CA /* card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = card.cpp; sourceTree = "<group>"; };
 		7680103C1D96E3E5006F88CA /* card.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = card.hpp; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		768010421D96EA5E006F88CA /* deck.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = deck.hpp; sourceTree = "<group>"; };
 		768010441D96F12A006F88CA /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
 		768010451D96F12A006F88CA /* game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = game.hpp; sourceTree = "<group>"; };
+		7684CEA61DA8F3E30071EA4E /* handTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = handTest.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 		7629402D1DA8D3B3003A0BBB /* blackjackTest */ = {
 			isa = PBXGroup;
 			children = (
-				7629402E1DA8D3B3003A0BBB /* blackjackTest.mm */,
+				7684CEA61DA8F3E30071EA4E /* handTest.mm */,
 				762940301DA8D3B3003A0BBB /* Info.plist */,
 			);
 			path = blackjackTest;
@@ -218,7 +218,7 @@
 			files = (
 				762940371DA8DCA1003A0BBB /* deck.cpp in Sources */,
 				762940351DA8DC9C003A0BBB /* player.cpp in Sources */,
-				7629402F1DA8D3B3003A0BBB /* blackjackTest.mm in Sources */,
+				7684CEA71DA8F3E30071EA4E /* handTest.mm in Sources */,
 				762940381DA8DCA4003A0BBB /* hand.cpp in Sources */,
 				762940361DA8DC9F003A0BBB /* game.cpp in Sources */,
 				762940391DA8DCA6003A0BBB /* card.cpp in Sources */,
@@ -389,6 +389,7 @@
 				762940321DA8D3B3003A0BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
