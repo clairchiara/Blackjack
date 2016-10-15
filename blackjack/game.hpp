@@ -29,10 +29,10 @@ private:
 	unique_ptr<Deck> deck;
 	unique_ptr<Hand> dealerHand;
 	unique_ptr<Player> player;
-	inline set<Action> allowedActions() const;
+	inline set<const Action> allowedActions() const;
 public:
 	Game(const long);
-	set<Action> action(Action);
+	set<const Action> action(const Action);
 	void play();
 	void deal(const Person);
 	void showHand(const Person) const;

@@ -22,7 +22,7 @@ Game::Game(const long startingCash) : deck(new Deck()), dealerHand(new Hand([thi
 	player = unique_ptr<Player>(new Player(hand, startingCash));
 };
 
-inline set<Action> Game::allowedActions() const {
+inline set<const Action> Game::allowedActions() const {
 	return player->getHand().getAllowedActions();
 };
 
@@ -44,13 +44,17 @@ void Game::double_hit() {
 	deal(PLAYER);
 };
 
+void Game::split() {
+	// TODO
+};
+
 const Hand& Game::getHand(const Person person) const {
 	if (person == PLAYER) return player->getHand();
 	else if (person == DEALER) return *dealerHand;
 	else throw new std::exception();
 };
 
-set<Action> Game::action(Action action) {
+set<const Action> Game::action(const Action action) {
 	if (allowedActions().find(action) == allowedActions().end()) return allowedActions();
 	switch (action) {
 		case HIT:

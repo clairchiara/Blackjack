@@ -40,7 +40,7 @@ public:
 	void addDCardAndDouble(const Card*);
 	void empty();
 	vector<const Card*> getCards() const;
-	set<Action> getAllowedActions() const;
+	set<const Action> getAllowedActions() const;
 	operator string() const;
 };
 

@@ -53,8 +53,8 @@ vector<const Card*> Hand::getCards() const {
 	return cards;
 };
 
-set<Action> Hand::getAllowedActions() const {
-	set<Action> allowedActions;
+set<const Action> Hand::getAllowedActions() const {
+	set<const Action> allowedActions;
 	allowedActions.insert(STAND);
 	if (not bust()) {
 		allowedActions.insert(HIT);
