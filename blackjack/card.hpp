@@ -44,11 +44,11 @@ enum Number {
 };
 
 struct Card {
-	static const map<Suit, string> suitToString;
-	static const map<Number, string> numberToString;
+	static const map<const Suit, const string> suitToString;
+	static const map<const Number, const string> numberToString;
 	const Suit suit;
 	const Number number;
-	static const vector<Card> allCards;
+	static const vector<const Card> allCards;
 	operator string() const;
 };
 
