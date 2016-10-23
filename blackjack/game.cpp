@@ -72,6 +72,25 @@ set<const Action> Game::action(const Action action) {
 	return allowedActions();
 };
 
+void Game::newHand(const Person person) {
+	switch (person) {
+		case DEALER:
+			dealerHand = unique_ptr<Hand>(new Hand([this] {
+				array<const Card*, 2> cards;
+				for (int i = 0; i < 2; i++) cards[i] = deck->deal();
+				return cards;
+			}()));
+		break;
+		case PLAYER:
+			player->emptyHand();
+			hit(PLAYER);
+			hit(PLAYER);
+			break;
+		default:
+			throw new std::exception();
+	}
+};
+
 void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 	cout << "Your hand ";
 	showHand(PLAYER);
@@ -81,16 +100,16 @@ void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 	bool end_loop{false};
 	while ((not getHand(PLAYER).bust()) and (not end_loop) and getHand(PLAYER).value() != 21) {
 		cout << "Action? ";
-		unique_ptr<char> response(new char);
-		cin.read(response.get(), 1);
-		switch (*response) {
+		char response;
+		cin >> response;
+		switch (response) {
 			case 'h':
-				hit(PLAYER);
+				action(HIT);
 				showHand(PLAYER);
 				cout << endl;
 				break;
 			case 'd':
-				double_hit();
+				action(DOUBLE);
 				showHand(PLAYER);
 				cout << endl;
 				end_loop = true;
@@ -111,5 +130,8 @@ void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 		showHand(DEALER);
 		cout << endl;
 	}
-	return;
+	if (deck->load() > 0.5) deck = unique_ptr<Deck>(new Deck());
+	newHand(PLAYER);
+	newHand(DEALER);
+	play();
 };

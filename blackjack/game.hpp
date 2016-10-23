@@ -33,6 +33,7 @@ private:
 public:
 	Game(const long);
 	set<const Action> action(const Action);
+	void newHand(const Person);
 	void play();
 	void deal(const Person);
 	void showHand(const Person) const;
