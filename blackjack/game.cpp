@@ -20,39 +20,39 @@ Game::Game(const long startingCash) : deck(new Deck()), dealerHand(new Hand([thi
 		return initialCards;
 	}()};
 	player = unique_ptr<Player>(new Player(hand, startingCash));
-};
+}
 
 inline set<const Action> Game::allowedActions() const {
 	return player->getHand().getAllowedActions();
-};
+}
 
 void Game::deal(const Person person) {
 	if (person == PLAYER) player->addCard(deck->deal());
 	else if (person == DEALER) dealerHand->addCard(deck->deal());
-};
+}
 
 void Game::showHand(const Person person) const {
 	if (person == PLAYER) player->showHand();
 	else if (person == DEALER) cout << *dealerHand;
-};
+}
 
 void Game::hit(const Person person) {
 	deal(person);
-};
+}
 
 void Game::double_hit() {
 	deal(PLAYER);
-};
+}
 
 void Game::split() {
 	// TODO
-};
+}
 
 const Hand& Game::getHand(const Person person) const {
 	if (person == PLAYER) return player->getHand();
 	else if (person == DEALER) return *dealerHand;
 	else throw new std::exception();
-};
+}
 
 set<const Action> Game::action(const Action action) {
 	if (allowedActions().find(action) == allowedActions().end()) return allowedActions();
@@ -70,7 +70,7 @@ set<const Action> Game::action(const Action action) {
 			break;
 	}
 	return allowedActions();
-};
+}
 
 void Game::newHand(const Person person) {
 	switch (person) {
@@ -89,7 +89,7 @@ void Game::newHand(const Person person) {
 		default:
 			throw new std::exception();
 	}
-};
+}
 
 void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 	cout << "Your hand ";
@@ -134,4 +134,4 @@ void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 	newHand(PLAYER);
 	newHand(DEALER);
 	play();
-};
+}

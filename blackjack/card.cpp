@@ -88,4 +88,4 @@ const vector<const Card> Card::allCards{
 
 Card::operator string() const {
 	return numberToString.at(number) + suitToString.at(suit);
-};
+}

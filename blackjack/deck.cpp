@@ -10,7 +10,7 @@
 
 const u_int Deck::DECK_SIZE = 52;
 
-Deck::Deck() : Deck(1) {};
+Deck::Deck() : Deck(1) {}
 
 Deck::Deck(u_int _decks) : distribution(0, DECK_SIZE * decks - 1), decks(_decks > 6 ? 6 : _decks) {
 	// Is created shuffled
@@ -23,14 +23,14 @@ Deck::Deck(u_int _decks) : distribution(0, DECK_SIZE * decks - 1), decks(_decks 
 			cards[where] = &Card::allCards[j];
 		}
 	}
-};
+}
 
 const Card* Deck::deal() {
 	const Card* card = cards[cards.size() - 1];
 	cards.pop_back();
 	return card;
-};
+}
 
 float Deck::load() const {
 	return 1 - (cards.size() / (DECK_SIZE * decks));
-};
+}
