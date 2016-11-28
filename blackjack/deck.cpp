@@ -18,9 +18,8 @@ Deck::Deck(u_int _decks) : distribution(0, DECK_SIZE * decks - 1), decks(_decks 
 	for (u_int i = 0; i < decks; i++) {
 		for (u_int j = 0; j < Card::allCards.size(); j++) {
 			u_int where;
-			do {
-				where = distribution(randomDevice);
-			} while (cards[where] != nullptr);
+			do where = distribution(randomDevice);
+			while (cards[where] != nullptr);
 			cards[where] = &Card::allCards[j];
 		}
 	}
