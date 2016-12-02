@@ -9,7 +9,7 @@
 #include "game.hpp"
 #include <exception>
 
-Game::Game(const long startingCash) : deck(new Deck()), dealerHand(new Hand([this] {
+Game::Game(const long startingCash) : deck(new Deck), dealerHand(new Hand([this] {
 	array<const Card*, 2> initialCards;
 	for (int i = 0; i < 2; i++) initialCards[i] = deck->deal();
 	return initialCards;
@@ -51,7 +51,7 @@ void Game::split() {
 const Hand& Game::getHand(const Person person) const {
 	if (person == PLAYER) return player->getHand();
 	else if (person == DEALER) return *dealerHand;
-	else throw new std::exception();
+	else throw new std::exception;
 }
 
 set<const Action> Game::action(const Action action) {
@@ -87,7 +87,7 @@ void Game::newHand(const Person person) {
 			hit(PLAYER);
 			break;
 		default:
-			throw new std::exception();
+			throw new std::exception;
 	}
 }
 
@@ -130,7 +130,7 @@ void Game::play() { // TODO: split into more MVC-like structure to have APIs.
 		showHand(DEALER);
 		cout << endl;
 	}
-	if (deck->load() > 0.5) deck = unique_ptr<Deck>(new Deck());
+	if (deck->load() > 0.5) deck = unique_ptr<Deck>(new Deck);
 	newHand(PLAYER);
 	newHand(DEALER);
 	play();
